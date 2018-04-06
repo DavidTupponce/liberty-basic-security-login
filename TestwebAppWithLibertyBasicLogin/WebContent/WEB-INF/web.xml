@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<display-name>TestwebApp</display-name>
+	<!-- SECURITY ROLES -->
+	<security-role>
+		<role-name>testing</role-name>
+	</security-role>
+
+	<!-- SECURITY CONSTRAINTS -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name></web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>testing</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<!-- AUTHENTICATION METHOD: Basic authentication -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>defaultRealm</realm-name>
+		<form-login-config>
+			<form-login-page>/index.html</form-login-page>
+			<form-error-page>/index.html</form-error-page>
+		</form-login-config>
+	</login-config>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
