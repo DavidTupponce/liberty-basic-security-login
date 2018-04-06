@@ -6,7 +6,7 @@
 <feature>appSecurity-2.0</feature>
 * Add below lines to server.xml
 
-`<basicRegistry id="basic" realm="defaultRealm">
+<basicRegistry id="basic" realm="defaultRealm">
       <user name="bob" password="bobpwd"/>
 </basicRegistry>
 
@@ -17,7 +17,7 @@
                <user name="bob"/>
            </security-role>
        </application-bnd>
-</webApplication>`
+</webApplication>
 
 * Then start the server and try the following url  http://localhost:9080/TestwebAppWithLibertyBasicLogin/MyServlet
 
